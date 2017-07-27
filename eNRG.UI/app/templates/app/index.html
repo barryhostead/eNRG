@@ -1,0 +1,75 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<div class="jumbotron">
+	<h1><img src="{% static "resources/logo.png" %}" alt="MS Amlin"/>       eNRG</h1>
+	<p class="lead">electronic Natural, Renewable, GeoThermal Platform </p>
+</div>
+
+<div class="row">
+	<div class="col-md-2">
+		<h2>Underwriter Information</h2>
+		<p>
+			<i>Implement Underwriter profile</i>
+		</p>
+	</div>
+	<div class="col-md-8">
+		<h2>Plant Location Search</h2>
+		<p>
+            <i>Implement Search</i>
+		</p>
+	</div>
+	<div class="col-md-2">
+		<h2>Well Information</h2>
+		<p>
+            <i>Implement Search Output - Well</i>
+		</p>
+		<p><a class="btn btn-default" href="http://www.google.co.uk">Google It &raquo;</a></p>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-2">
+		<h2>Social Media Information</h2>
+				<p>
+            <i>Implement Social Media Stub</i>
+		</p>
+	</div>
+	<div class="col-md-8">
+		<h2>Map <i>Implement Responsive Map</i></h2>
+		<img src="{% static "resources/capture.png" %}" alt="M & A" />
+	</div>
+	<div class="col-md-2">
+		<h2>Geological Information</h2>
+				<p>
+            <i>Implement Search Output - Geology</i>
+		</p>
+	</div>
+	</div>
+<div class="row">
+	<div class="col-md-4">
+		<h2>Existing Policies in Region</h2>
+				<p>
+            <i>Implement Policy Stub</i>
+		</p>
+	</div>
+	<div class="col-md-4">
+		<h2>Existing Policies for Insured</h2>
+				<p>
+            <i>Implement Policy Stub</i>
+		</p>
+	</div>
+	  <div class="col-md-4">
+		<h2>Risk Profile</h2>
+				<p>
+            <i>Implement Risk Output</i>
+		</p>
+	</div>
+    </div>
+
+
+
+{% endblock %}

@@ -74,6 +74,7 @@
     <Content Include="app\static\resources\background.png" />
     <Content Include="app\static\resources\background2.png" />
     <Content Include="app\static\resources\Capture.PNG" />
+    <Content Include="app\static\resources\google logo SMALL.png" />
     <Content Include="app\static\resources\google logo.png" />
     <Content Include="app\static\resources\logo-small.png" />
     <Content Include="app\static\resources\logo.png" />

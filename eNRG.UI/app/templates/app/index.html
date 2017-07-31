@@ -17,16 +17,29 @@
 	</div>
 	<div class="col-md-8">
 		<h2>Plant Location Search</h2>
-		<p>
-            <i>Implement Search</i>
-		</p>
+     <div class="form">               
+        <form method="POST" class="control-label">
+            {% csrf_token %}
+            <p class="col-md-2">
+                <label>Country </label>{{ form.Country }}</p>
+            
+            <p class="col-md-2">
+                <label>State </label>{{ form.State }}</p>
+            <p class="col-md-2">
+                <label>City </label>{{ form.City }}</p>
+            <p class="col-md-2">
+                <label>Well </label>{{ form.Well }}</p>
+            <p><button type="submit" class="btn btn-default">Save</button></p>
+    </form>
+         </div>      
+        
 	</div>
 	<div class="col-md-2">
 		<h2>Well Information</h2>
 		<p>
             <i>Implement Search Output - Well</i>
 		</p>
-		<p><a class="btn btn-default" href="http://www.google.co.uk">Google It &raquo;</a></p>
+		<p><a class="btn btn-default" href="http://www.google.co.uk"> <img src="{% static "resources/google-logo-SMALL.png" %}"/></a></p>
 	</div>
 </div>
 

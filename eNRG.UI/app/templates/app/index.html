@@ -15,31 +15,29 @@
 			<i>Implement Underwriter profile</i>
 		</p>
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-7">
 		<h2>Plant Location Search</h2>
      <div class="form">               
-        <form method="POST" class="control-label">
+        <form action="{%url 'Search' %}" method="POST" class="control-label">
             {% csrf_token %}
             <p class="col-md-2">
-                <label>Country </label>{{ form.Country }}</p>
-            
+                <label>Country </label>{{ wellform.Country }}
+            <button type="submit" class="btn btn-default">Search</button>
+            </p>
             <p class="col-md-2">
-                <label>State </label>{{ form.State }}</p>
+                <label>State </label>{{ wellform.State }}</p>
             <p class="col-md-2">
-                <label>City </label>{{ form.City }}</p>
+                <label>City </label>{{ wellform.City }}</p>
             <p class="col-md-2">
-                <label>Well </label>{{ form.Well }}</p>
-            <p><button type="submit" class="btn btn-default">Save</button></p>
+                <label>Well </label>{{ wellform.Well }}
+            </p>
+
     </form>
          </div>      
         
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		<h2>Well Information</h2>
-		<p>
-            <i>Implement Search Output - Well</i>
-		</p>
-		<p><a class="btn btn-default" href="http://www.google.co.uk"> <img src="{% static "resources/google-logo-SMALL.png" %}"/></a></p>
 	</div>
 </div>
 
@@ -51,18 +49,59 @@
             <i>Implement Social Media Stub</i>
 		</p>
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-7">
 		<h2>Map <i>Implement Responsive Map</i></h2>
 		<img src="{% static "resources/capture.png" %}" alt="M & A" />
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
+        		<div class="form">               
+            <form action="{%url 'WellInfo'%}" method="POST" class="control-label">
+                {% csrf_token %}
+                <table class="table"><tr><td>Number of Established Plants Nearby</td><td></td><td>{{ wellinfoform.NumberOfEstablishedPlantsNearby }}</td></tr>
+                <tr><td>Number of Developmental Plants Nearby</td><td></td><td>{{ wellinfoform.NumberOfDevelopmentalPlantsNearby }}</td></tr>
+                <tr><td>Operator Name</td><td></td><td>{{ wellinfoform.OperatorName }}</td></tr>
+                <tr><td>Well Status</td><td></td><td>{{ wellinfoform.WellStatus }}</td></tr>
+                <tr><td>Conversion Technology</td><td></td><td>{{ wellinfoform.ConversionTechnology }}</td></tr>
+                <tr><td>Cooling Type</td><td></td><td>{{ wellinfoform.CoolingType }}</td></tr>
+                <tr><td>Age of Well (Years)</td><td></td><td>{{ wellinfoform.AgeOfWellInYears }}</td></tr>
+                <tr><td>Depth of Well (m)</td><td></td><td>{{ wellinfoform.WellDepthInMeters }}</td></tr></table>
+
+
+            </form>
+            		<p><a class="btn btn-default" href="http://www.google.co.uk"> <img src="{% static "resources/google-logo-SMALL.png" %}"/></a></p>
+
+        </div>
+
 		<h2>Geological Information</h2>
 				<p>
-            <i>Implement Search Output - Geology</i>
+            <div class="form">               
+            <form action="{%url 'GeoInfo'%}" method="POST" class="control-label">
+                {% csrf_token %}
+                <table class="table"><tr><td>Tempreature</td><td/><td/><td>{{ geoinfoform.Tempreature }}</td></tr>
+                <tr><td>Chemical Composition</td><td/><td/><td>{{ geoinfoform.ChemicalComposition }}</td></tr>
+                <tr><td>Rock Type</td><td/><td/><td>{{ geoinfoform.RockType }}</td></tr></table>
+                </p>
+
+            </form>
+		
+        <h2>Risk Profile</h2>
+				<p>
+            <div class="form">               
+            <form action="{%url 'RiskProfile'%}" method="POST" class="control-label">
+                {% csrf_token %}
+                <table class="table">
+                    <tr><td>HighRisk</td><td rowspan="3">Notes: {{ RiskProfile.Notes|linebreaksbr }}</td></tr>
+                    <tr><td>MediumRisk</td></tr>
+                    <tr><td>LowRisk</td></tr>
+                   <tr><td colspan="2">Risk Rating: {{ RiskProfile.Score}}</td></tr>
+                </table>
+
+
+            </form>
 		</p>
 	</div>
 	</div>
-<div class="row">
+    <div class="row">
 	<div class="col-md-4">
 		<h2>Existing Policies in Region</h2>
 				<p>
@@ -75,12 +114,7 @@
             <i>Implement Policy Stub</i>
 		</p>
 	</div>
-	  <div class="col-md-4">
-		<h2>Risk Profile</h2>
-				<p>
-            <i>Implement Risk Output</i>
-		</p>
-	</div>
+	 
     </div>
 
 

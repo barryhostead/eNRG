@@ -17,5 +17,26 @@ class WellInstance(models.Model):
     City = models.CharField(max_length=200, choices = CityChoices, )
     Well = models.CharField(max_length=200, choices = WellChoices, )
 
-    def __str__(self):
-        return self.Well
+
+class WellInfo(models.Model):
+        NumberOfEstablishedPlantsNearby = models.IntegerField()
+        NumberOfDevelopmentalPlantsNearby = models.IntegerField()
+        OperatorName = models.CharField(max_length=200)
+        WellStatus = models.CharField(max_length=200)
+        ConversionTechnology = models.CharField(max_length=200)
+        CoolingType = models.CharField(max_length=200)
+        AgeOfWellInYears = models.IntegerField() 
+        WellDepthInMeters = models.IntegerField()
+        
+class GeoInfo(models.Model):
+        Tempreature = models.IntegerField()
+        ChemicalComposition = models.CharField(max_length=200)
+        RockType = models.CharField(max_length=200)
+
+class RiskProfile(models.Model):
+        High = models.BooleanField()
+        Medium = models.BooleanField()
+        Low = models.BooleanField()
+        Score = models.IntegerField()
+        Notes = models.CharField(max_length=8000)
+

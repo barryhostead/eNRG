@@ -3,23 +3,27 @@ Definition of forms.
 """
 
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm
-from django.utils.translation import ugettext_lazy as _
-from .models import WellInstance
+from app.models import WellInstance,  WellInfo, GeoInfo, RiskProfile
 
-class BootstrapAuthenticationForm(AuthenticationForm):
-    """Authentication form which uses boostrap CSS."""
-    username = forms.CharField(max_length=254,
-                               widget=forms.TextInput({
-                                   'class': 'form-control',
-                                   'placeholder': 'User name'}))
-    password = forms.CharField(label=_("Password"),
-                               widget=forms.PasswordInput({
-                                   'class': 'form-control',
-                                   'placeholder':'Password'}))
 
 class WellForm(forms.ModelForm):
 
     class Meta:
         model = WellInstance
-        fields = ('Country', 'State', 'City', 'Well',)
+        fields = ['Country', 'State', 'City', 'Well']
+
+class WellInfoForm(forms.ModelForm):
+
+    class Meta:
+        model = WellInfo
+        fields = ['NumberOfEstablishedPlantsNearby','NumberOfDevelopmentalPlantsNearby','OperatorName', 'WellStatus', 'ConversionTechnology', 'CoolingType', 'AgeOfWellInYears','WellDepthInMeters']
+
+class GeoInfoForm(forms.ModelForm):
+    class Meta:
+        model = GeoInfo
+        fields = ['Tempreature','ChemicalComposition','RockType']
+
+class RiskProfileForm(forms.ModelForm):
+    class Meta:
+        model = RiskProfile
+        fields = ['High','Medium','Low','Score','Notes']

@@ -13,9 +13,9 @@
     </ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <StartupFile>manage.py</StartupFile>
-    <SearchPath>..\eNRG\DataWrangling;..\eNRG\GeoLocation</SearchPath>
+    <SearchPath>..\eNRG\DataWrangling;app\static\py</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
-    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <WebBrowserUrl>http://localhost:8000</WebBrowserUrl>
     <LaunchProvider>Django launcher</LaunchProvider>
     <OutputPath>.</OutputPath>
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
@@ -68,12 +68,14 @@
     <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\py\map.html" />
     <Content Include="app\static\resources\background-light.png" />
     <Content Include="app\static\resources\background-small.png" />
     <Content Include="app\static\resources\background-stretch.png" />
     <Content Include="app\static\resources\background.png" />
     <Content Include="app\static\resources\background2.png" />
     <Content Include="app\static\resources\Capture.PNG" />
+    <Content Include="app\static\resources\geothermal-icon.png" />
     <Content Include="app\static\resources\google logo.png" />
     <Content Include="app\static\resources\google-logo-SMALL.png" />
     <Content Include="app\static\resources\logo-small.png" />
@@ -85,6 +87,7 @@
     <Content Include="app\static\resources\maybe.PNG" />
     <Content Include="app\static\resources\no-grey.png" />
     <Content Include="app\static\resources\no.PNG" />
+    <Content Include="app\static\resources\stevo.png" />
     <Content Include="app\static\resources\yes-grey.png" />
     <Content Include="app\static\resources\yes.PNG" />
     <Content Include="eNRGUI\__pycache__\settings.cpython-36.pyc" />

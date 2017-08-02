@@ -4,7 +4,7 @@ from TweetParser import *
 from JSONHelper import *
 from GeoLocationData import *
 
-GetWellChoices()
+map_1
 
 ###Parse Twitter Data
 ##Get the number of tweets to retrieve.

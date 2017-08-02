@@ -3,6 +3,7 @@ Definition of models.
 """
 from django.db import models
 
+
 # Create your models here.
 class WellInstance(models.Model):
 
@@ -39,4 +40,6 @@ class RiskProfile(models.Model):
         Low = models.BooleanField()
         Score = models.IntegerField()
         Notes = models.TextField()
+
+
 

@@ -2,7 +2,6 @@
 
 {% block content %}
 {% load staticfiles %}
-
 <div class="jumbotron">
 	<h1><img src="{% static "resources/logo.png" %}" alt="MS Amlin"/>       eNRG</h1>
 	<p class="lead">electronic Natural, Renewable, GeoThermal Platform </p>
@@ -12,17 +11,20 @@
 	<div class="col-md-2">
 		<h2>Underwriter Information</h2>
 		<p>
-			<i>Implement Underwriter profile</i>
-		</p>
+            <b>Steven Portman</b>
+            		</p>
+        		<p>
+            <b>Energy Underwriter - M &amp; A</b>
+        		</p>
 	</div>
 	<div class="col-md-7">
 		<h2>Plant Location Search</h2>
-     <div class="form">               
+        <div class="form">               
         <form action="{%url 'Search' %}" method="POST" class="control-label">
             {% csrf_token %}
             <p class="col-md-2">
                 <label>Country </label>{{ wellform.Country }}
-            <button type="submit" class="btn btn-default">Search</button>
+           
             </p>
             <p class="col-md-2">
                 <label>State </label>{{ wellform.State }}</p>
@@ -30,10 +32,16 @@
                 <label>City </label>{{ wellform.City }}</p>
             <p class="col-md-2">
                 <label>Well </label>{{ wellform.Well }}
+                <br/>
+                <br/>
+                <button type="submit" class="btn btn-default">Search</button>
             </p>
+            
+          
 
     </form>
-         </div>      
+         
+     </div>      
         
 	</div>
 	<div class="col-md-3">
@@ -43,15 +51,19 @@
 
 
 <div class="row">
+
 	<div class="col-md-2">
+    <img src="{% static "resources/stevo.png" %}"/>
+
 		<h2>Social Media Information</h2>
 				<p>
             <i>Implement Social Media Stub</i>
 		</p>
 	</div>
 	<div class="col-md-7">
-		<h2>Map <i>Implement Responsive Map</i></h2>
-		<img src="{% static "resources/capture.png" %}" alt="M & A" />
+		<h2>Map</h2>
+        <iframe width="100%" height="900" src="{% static "py/map.html" %}" frameborder="0" ></iframe>
+</iframe>
 	</div>
 	<div class="col-md-3">
         		<div class="form">               

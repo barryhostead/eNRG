@@ -3,13 +3,14 @@ Definition of views.
 """
 from django.views.generic import TemplateView, FormView
 from django.shortcuts import render
-from django.http import HttpRequest
+from django.http import HttpRequest,HttpResponseRedirect
 from django.template import RequestContext
 from datetime import datetime
 from .forms import WellForm, WellInfoForm, GeoInfoForm, RiskProfileForm
-from django.contrib import messages
-
-import google
+#from django.contrib import messages
+#import folium
+#import google
+import GeoLocationData as gl
 
 class home(TemplateView):
     template_name = 'app/index.html'
@@ -34,8 +35,6 @@ class home(TemplateView):
 
         return self.render_to_response(context)
     
-    def save(self):
-        messages.add_message(request, messages.INFO, 'Hello world.')
 
     
 
@@ -78,8 +77,8 @@ class WellFormView(FormView):
         
         if wellform.is_valid():
             wellform.save()
-            #for url in  google.search("test"):
-            #   print(url)
+            
+            getinfo(request, request.POST['Well'])
 
             return self.render_to_response(
                 self.get_context_data(
@@ -187,3 +186,14 @@ class RiskProfileFormView(FormView):
                     )
                 )
 
+
+def getinfo(request, wellname):
+    wells=gl.GetWells()
+
+    for well in wells:
+        if well.Well == wellname:
+            selectedwell=well
+
+            gl.CreateMap(selectedwell[6],selectedwell[5])
+    
+    return HttpResponseRedirect('/')

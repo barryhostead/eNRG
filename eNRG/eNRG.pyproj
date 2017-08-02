@@ -6,7 +6,7 @@
     <ProjectHome>
     </ProjectHome>
     <StartupFile>eNRG.py</StartupFile>
-    <SearchPath>DataWrangling\WebsiteData;DataWrangling\Twitter;DataWrangling\JSON;GeoLocation</SearchPath>
+    <SearchPath>DataWrangling\WebsiteData;DataWrangling\Twitter;DataWrangling\JSON</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>eNRG</Name>
@@ -34,16 +34,12 @@
     <Compile Include="eNRG.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GeoLocation\GeoLocationData.py">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataWrangling\" />
     <Folder Include="DataWrangling\JSON\" />
     <Folder Include="DataWrangling\WebsiteData\" />
     <Folder Include="DataWrangling\Twitter\" />
-    <Folder Include="GeoLocation\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

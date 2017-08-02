@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^wellinfo/submit', app.views.WellInfoFormView.as_view(), name='WellInfo'),
     url(r'^geoinfo/submit', app.views.GeoInfoFormView.as_view(), name='GeoInfo'),
     url(r'^riskprofile/submit', app.views.RiskProfileFormView.as_view(), name='RiskProfile'),
-
+    url(r'^getinfo/(\d+)/$', app.views.getinfo, name='getinfo')    ,
    
 
     # Uncomment the admin/doc line below to enable admin documentation:

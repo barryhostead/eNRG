@@ -6,7 +6,7 @@
     <ProjectHome>
     </ProjectHome>
     <StartupFile>eNRG.py</StartupFile>
-    <SearchPath>DataWrangling\WebsiteData;DataWrangling\Twitter;DataWrangling\JSON</SearchPath>
+    <SearchPath>DataWrangling\WebsiteData;DataWrangling\Twitter;DataWrangling\JSON;GeoLocation</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>eNRG</Name>

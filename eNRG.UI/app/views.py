@@ -7,6 +7,8 @@ from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
 from .forms import WellForm, WellInfoForm, GeoInfoForm, RiskProfileForm
+from django.contrib import messages
+
 import google
 
 class home(TemplateView):
@@ -31,6 +33,10 @@ class home(TemplateView):
         context['year'] = year
 
         return self.render_to_response(context)
+    
+    def save(self):
+        messages.add_message(request, messages.INFO, 'Hello world.')
+
     
 
 def contact(request):
@@ -62,14 +68,7 @@ def about(request):
 class WellFormView(FormView):
     form_class = WellForm
     template_name = 'app/index.html'
-    success_url = '/'
-
-    def save(self, commit=True):
-        instance = super(WellForm, self).save(commit=False)
-        #instance.flag1 = 'flag1' in self.cleaned_data['multi_choice'] # etc
-        if commit:
-            instance.save()
-        return instance
+    success_url = '/'    
 
     def post(self, request, *args, **kwargs):
         wellform = self.form_class(request.POST)
@@ -139,6 +138,7 @@ class GeoInfoFormView(FormView):
         wellform = WellForm()
         wellinfoform = WellInfoForm()
         geoinfoform = self.form_class(request.POST)
+        riskprofileform = RiskProfileForm()
         
         if geoinfoform.is_valid():
             geoinfoform.save()

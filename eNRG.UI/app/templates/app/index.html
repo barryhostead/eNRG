@@ -68,7 +68,7 @@
 
 
             </form>
-            		<p><a class="btn btn-default" href="http://www.google.co.uk"> <img src="{% static "resources/google-logo-SMALL.png" %}"/></a></p>
+            		<p>Search for Well Information   <a class="btn btn-default" href="http://www.google.co.uk"> <img src="{% static "resources/google-logo-SMALL.png" %}"/></a></p>
 
         </div>
 
@@ -80,41 +80,54 @@
                 <table class="table"><tr><td>Tempreature</td><td/><td/><td>{{ geoinfoform.Tempreature }}</td></tr>
                 <tr><td>Chemical Composition</td><td/><td/><td>{{ geoinfoform.ChemicalComposition }}</td></tr>
                 <tr><td>Rock Type</td><td/><td/><td>{{ geoinfoform.RockType }}</td></tr></table>
-                </p>
-
-            </form>
-		
+                            </form>
+                </div>
+		</p>
         <h2>Risk Profile</h2>
 				<p>
-            <div class="form">               
-            <form action="{%url 'RiskProfile'%}" method="POST" class="control-label">
-                {% csrf_token %}
-                <table class="table">
-                    <tr><td>HighRisk</td><td rowspan="3">Notes: {{ RiskProfile.Notes|linebreaksbr }}</td></tr>
-                    <tr><td>MediumRisk</td></tr>
-                    <tr><td>LowRisk</td></tr>
-                   <tr><td colspan="2">Risk Rating: {{ RiskProfile.Score}}</td></tr>
-                </table>
+			<div class="form">               
+			<form action="{%url 'RiskProfile'%}" method="POST" class="control-label">
+				{% csrf_token %}
+				<table class="table">
+					<tr><td>{% if riskprofileform.Score > 10 %}
+            <img src="{% static "resources/yes.png" %}"/>
+                        {% else %}
+            <img src="{% static "resources/yes-grey.png" %}"/>
 
+        {% endif %}</td><td>Notes: </td><td rowspan="4" colspan="2">{{ riskprofileform.Notes }}</td></tr>
+					<tr><td>{% if riskprofileform.score > 10 %}
+            <img src="{% static "resources/maybe.png" %}"/>
+                         {% else %}
+            <img src="{% static "resources/maybe-grey.png" %}"/>
 
-            </form>
+        {% endif %}</td></tr>
+					<tr><td>{% if riskprofileform.score > 10 %}
+            <img src="{% static "resources/no.png" %}"/>
+                         {% else %}
+            <img src="{% static "resources/no-grey.png" %}"/>
+
+        {% endif %}</td></tr>
+				   <tr><td>Risk Rating: </td><td colspan="2">{{ riskprofileform.Score }}</td></tr>
+				</table>
+			</form>
+		</div>
 		</p>
+	
 	</div>
-	</div>
-    <div class="row">
-	<div class="col-md-4">
-		<h2>Existing Policies in Region</h2>
-				<p>
-            <i>Implement Policy Stub</i>
-		</p>
-	</div>
-	<div class="col-md-4">
-		<h2>Existing Policies for Insured</h2>
-				<p>
-            <i>Implement Policy Stub</i>
-		</p>
-	</div>
-	 
+<div class="row">
+	    <div class="col-md-4">
+		    <h2>Existing Policies in Region</h2>
+				    <p>
+                <i>Implement Policy Stub</i>
+		    </p>
+	    </div>
+	    <div class="col-md-4">
+		    <h2>Existing Policies for Insured</h2>
+				    <p>
+                <i>Implement Policy Stub</i>
+		    </p>
+	    </div>
+
     </div>
 
 

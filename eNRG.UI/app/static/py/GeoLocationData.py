@@ -1,7 +1,7 @@
 import json
 import urllib.request
 from xml.etree import ElementTree as ET
-import csv
+import numpy
 import pandas as pd
 
 def GetWellChoices():

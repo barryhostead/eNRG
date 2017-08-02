@@ -38,5 +38,5 @@ class RiskProfile(models.Model):
         Medium = models.BooleanField()
         Low = models.BooleanField()
         Score = models.IntegerField()
-        Notes = models.CharField(max_length=8000)
+        Notes = models.TextField()
 

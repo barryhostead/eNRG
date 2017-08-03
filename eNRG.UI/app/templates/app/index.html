@@ -22,27 +22,14 @@
         <div class="form">               
         <form action="{%url 'Search' %}" method="POST" class="control-label">
             {% csrf_token %}
-            <p class="col-md-2">
-                <label>Country </label>{{ wellform.Country }}
-           
-            </p>
-            <p class="col-md-2">
-                <label>State </label>{{ wellform.State }}</p>
-            <p class="col-md-2">
-                <label>City </label>{{ wellform.City }}</p>
-            <p class="col-md-2">
-                <label>Well </label>{{ wellform.Well }}
-                <br/>
-                <br/>
-                <button type="submit" class="btn btn-default">Search</button>
-            </p>
-            
-          
+            <p class="col-md-2">                <label>Country </label>{{ wellform.Country }} </p>
+            <p class="col-md-1">                <label>State </label>{{ wellform.State }} </p>
+            <p class="col-md-1">                <label>City </label>{{ wellform.City }} </p>
+            <p class="col-md-2">                <label>Well </label>{{ wellform.Well }} </p>
+            <p class="col-md-1">               <br/> <button type="submit" class="btn btn-default">Search</button></p>
 
     </form>
-         
      </div>      
-        
 	</div>
 	<div class="col-md-3">
 		<h2>Well Information</h2>
@@ -57,7 +44,7 @@
 
 		<h2>Social Media Information</h2>
 				<p>
-            <i>Implement Social Media Stub</i>
+            <a class="twitter-timeline" href="https://twitter.com/energyhack" height="450">Tweets by @M&and;AGeothermal</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</p>
 	</div>
 	<div class="col-md-7">
@@ -128,16 +115,15 @@
 	</div>
 <div class="row">
 	    <div class="col-md-4">
-		    <h2>Existing Policies in Region</h2>
-				    <p>
-                <i>Implement Policy Stub</i>
-		    </p>
-	    </div>
+		    <h2>Existing Policies in Region  <img src="{% static "resources/drop-down-round-button.png" %}" /></h2>
+        </div>
 	    <div class="col-md-4">
-		    <h2>Existing Policies for Insured</h2>
-				    <p>
-                <i>Implement Policy Stub</i>
-		    </p>
+		    <h2>Existing Policies for Insured <img src="{% static "resources/drop-down-round-button.png" %}" /></h2>               
+
+	    </div>
+    	    <div class="col-md-4">
+		    <h2>Loss Data <img src="{% static "resources/drop-down-round-button.png" %}" /></h2>               
+
 	    </div>
 
     </div>

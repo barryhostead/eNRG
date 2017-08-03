@@ -36,9 +36,12 @@ import GeoLocationData as gl
 
 def getinfo(wellname):
     wells=gl.GetWells()
-
-    selectedwell=filter(wellname,wells)
     
-    gl.CreateMap(selectedwell[6],selectedwell[5])
+    
+    selectedwell = (i for i, well in enumerate(wells) if well[0].Well == wellname)
+    welllat = selectedwell(0)[6]
+    welllong = selectedwell(0)[5]
+
+    gl.CreateMap(welllat,welllong)
 
 getinfo("Kellog Hot Spring")

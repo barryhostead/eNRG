@@ -75,6 +75,9 @@
     <Content Include="app\static\resources\background.png" />
     <Content Include="app\static\resources\background2.png" />
     <Content Include="app\static\resources\Capture.PNG" />
+    <Content Include="app\static\resources\Decision Tree.png" />
+    <Content Include="app\static\resources\Doc repo image.png" />
+    <Content Include="app\static\resources\drop-down-round-button.png" />
     <Content Include="app\static\resources\geothermal-icon.png" />
     <Content Include="app\static\resources\google logo.png" />
     <Content Include="app\static\resources\google-logo-SMALL.png" />

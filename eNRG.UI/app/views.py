@@ -58,16 +58,49 @@ def about(request):
         request,
         'app/about.html',
         {
-            'title':'About',
-            'message':'Your application description page.',
+            'title':'Decision Tree',
             'year':datetime.now().year,
         }
-    )
+        )
+
+#class WellFormView(FormView):
+#    form_class = WellForm
+#    template_name = 'app/index.html'
+#    success_url = '/'    
+
+#    def post(self, request, *args, **kwargs):
+#        wellform = self.form_class(request.POST)
+#        wellinfoform = WellInfoForm()
+#        geoinfoform = GeoInfoForm()
+#        riskprofileform = RiskProfileForm()
+        
+#        if wellform.is_valid():
+#            wellform.save()
+            
+#            #getinfo(request, request.POST['Well'])
+
+#            return self.render_to_response(
+#                self.get_context_data(
+#                    success=True
+#                    )
+#                )
+#        else:
+#            return self.render_to_response(
+#                self.get_context_data(
+#                    wellform=wellform,
+#                    wellinfoform=wellinfoform,
+#                    geoinfoform=geoinfoform,
+#                    riskprofileform=riskprofileform
+
+#                    )
+#                )
+
+                
 
 class WellFormView(FormView):
     form_class = WellForm
     template_name = 'app/index.html'
-    success_url = '/'    
+    success_url = '/'
 
     def post(self, request, *args, **kwargs):
         wellform = self.form_class(request.POST)
@@ -75,11 +108,8 @@ class WellFormView(FormView):
         geoinfoform = GeoInfoForm()
         riskprofileform = RiskProfileForm()
         
-        if wellform.is_valid():
-            wellform.save()
-            
-            getinfo(request, request.POST['Well'])
-
+        if wellinfoform.is_valid():
+            wellinfoform.save()
             return self.render_to_response(
                 self.get_context_data(
                     success=True
@@ -91,12 +121,10 @@ class WellFormView(FormView):
                     wellform=wellform,
                     wellinfoform=wellinfoform,
                     geoinfoform=geoinfoform,
-                    riskprofileform=riskprofileform
+                    riskprofileform =riskprofileform
 
                     )
                 )
-
-                
 
 class WellInfoFormView(FormView):
     form_class = WellInfoForm
@@ -190,10 +218,8 @@ class RiskProfileFormView(FormView):
 def getinfo(request, wellname):
     wells=gl.GetWells()
 
-    for well in wells:
-        if well.Well == wellname:
-            selectedwell=well
-
-            gl.CreateMap(selectedwell[6],selectedwell[5])
+    print(wellname)
+    
+    gl.CreateMap(33.1470, -115.6125)
     
     return HttpResponseRedirect('/')

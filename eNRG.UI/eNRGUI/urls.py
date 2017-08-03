@@ -19,11 +19,11 @@ urlpatterns = [
     # Examples:
     url(r'^$', app.views.home.as_view(), name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
-    url(r'^about', app.views.about, name='about'),
-    url(r'^search/submit', app.views.WellFormView.as_view(), name='Search'),
-    url(r'^wellinfo/submit', app.views.WellInfoFormView.as_view(), name='WellInfo'),
-    url(r'^geoinfo/submit', app.views.GeoInfoFormView.as_view(), name='GeoInfo'),
-    url(r'^riskprofile/submit', app.views.RiskProfileFormView.as_view(), name='RiskProfile'),
+    url(r'^DecisionTree', app.views.about, name='DecisionTree'),
+    url(r'^search/$', app.views.WellFormView.as_view(), name='Search'),
+    url(r'^wellinfo/$', app.views.WellInfoFormView.as_view(), name='WellInfo'),
+    url(r'^geoinfo/$', app.views.GeoInfoFormView.as_view(), name='GeoInfo'),
+    url(r'^riskprofile/$', app.views.RiskProfileFormView.as_view(), name='RiskProfile'),
     url(r'^getinfo/(\d+)/$', app.views.getinfo, name='getinfo')    ,
    
 

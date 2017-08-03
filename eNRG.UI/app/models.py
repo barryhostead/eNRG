@@ -7,10 +7,10 @@ from django.db import models
 # Create your models here.
 class WellInstance(models.Model):
 
-    CountryChoices    = (('US','United States of America'),('UK','United Kingdon'))
-    StateChoices    = (('US','United States of America'),('UK','United Kingdon'))
-    CityChoices    = (('US','United States of America'),('UK','United Kingdon'))
-    WellChoices    = (('US','United States of America'),('UK','United Kingdon'))
+    CountryChoices    = (('US','United States of America'),('IN', 'Indonesia'))
+    StateChoices    = (('CA','California'),('NY','New York'))
+    CityChoices    = (('CA','California'),('LA','Lassen'))
+    WellChoices    = (('S3','Sinclair 3'),('KH','Kellog Hot Spring'))
 
 
     Country = models.CharField(max_length=200, choices = CountryChoices, )

@@ -58,7 +58,6 @@
     <Folder Include="app\static\resources\" />
     <Folder Include="eNRGUI\" />
     <Folder Include="eNRGUI\__pycache__\" />
-    <Folder Include="resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -90,6 +89,7 @@
     <Content Include="app\static\resources\maybe.PNG" />
     <Content Include="app\static\resources\no-grey.png" />
     <Content Include="app\static\resources\no.PNG" />
+    <Content Include="app\static\resources\Questionnaire.png" />
     <Content Include="app\static\resources\stevo.png" />
     <Content Include="app\static\resources\yes-grey.png" />
     <Content Include="app\static\resources\yes.PNG" />
@@ -98,10 +98,7 @@
     <Content Include="eNRGUI\__pycache__\wsgi.cpython-36.pyc" />
     <Content Include="eNRGUI\__pycache__\__init__.cpython-36.pyc" />
     <Content Include="requirements.txt" />
-    <Content Include="resources\250717-Mockup Design.pdf" />
-    <Content Include="resources\Geothermal_Power_Plants.kml" />
-    <Content Include="resources\geothermal_resource.kmz" />
-    <Content Include="resources\wells.csv" />
+    <Content Include="app\wells.csv" />
     <None Include="app\static\app\scripts\_references.js" />
     <Content Include="app\static\app\scripts\bootstrap.js" />
     <Content Include="app\static\app\scripts\bootstrap.min.js" />

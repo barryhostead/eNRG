@@ -31,8 +31,8 @@ class WellInfo(models.Model):
         
 class GeoInfo(models.Model):
         Tempreature = models.IntegerField()
-        ChemicalComposition = models.CharField(max_length=200)
-        RockType = models.CharField(max_length=200)
+        Ph = models.CharField(max_length=200)
+        CO2 = models.CharField(max_length=200)
 
 class RiskProfile(models.Model):
         High = models.BooleanField()

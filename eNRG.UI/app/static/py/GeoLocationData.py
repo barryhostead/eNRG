@@ -31,4 +31,3 @@ def CreateMap(lat,lon):
         
     
     folium.Map.save(map_object, "C:\\Users\\barry\\Documents\\GitHub\\eNRG\\eNRG.UI\\app\\static\\py\\map.html")
-

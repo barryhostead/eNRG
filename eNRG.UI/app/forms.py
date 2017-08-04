@@ -21,7 +21,7 @@ class WellInfoForm(forms.ModelForm):
 class GeoInfoForm(forms.ModelForm):
     class Meta:
         model = GeoInfo
-        fields = ['Tempreature','ChemicalComposition','RockType']
+        fields = ['Tempreature','Ph','CO2']
 
 class RiskProfileForm(forms.ModelForm):
     class Meta:

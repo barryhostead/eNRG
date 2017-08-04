@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - eNRG</title>
+    
+    <link rel="stylesheet" type="text/css" href="/static/app/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/app/content/site.css" />
+
+    <script src="/static/app/scripts/modernizr-2.6.2.js"></script>
+   
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+                
+            <div class="navbar-header">
+                
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">eNRG</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/DecisionTree">Decision Tree</a></li>
+                    <li><a href="/contact">Contact</a></li>
+   
+
+                </ul>
+                    <span class="icon-bar"></span>
+
+                            <img src="/static/resources/m%26a-small.png" alt="M & A" />
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <br/>
+        <br/>
+
+
+<div class="jumbotron">
+	<h1><img src="/static/resources/logo.png" alt="MS Amlin"/>       eNRG</h1>
+	<p class="lead">electronic Natural, Renewable, GeoThermal Platform </p>
+</div>
+
+<div class="row">
+	<div class="col-md-2">
+		<h2>Underwriter Information</h2>
+		<p>
+            <b>Steven Portman</b>
+            		</p>
+        		<p>
+            <b>Energy Underwriter - M &amp; A</b>
+        		</p>
+	</div>
+	<div class="col-md-7">
+		<h2>Plant Location Search</h2>
+        <div class="form">               
+        <form action="/search/" method="POST" class="control-label">
+            <input type='hidden' name='csrfmiddlewaretoken' value='Mc9HB2Mjdyus36SSFHYTqmekP1iP4dgsLRx67vtwcRlQXoBZdkDea5G3AqHBO1IY' />
+            <p class="col-md-2">                <label>Country </label><select name="Country" required id="id_Country">
+  <option value="">---------</option>
+
+  <option value="US" selected>United States of America</option>
+
+  <option value="IN">Indonesia</option>
+
+</select> </p>
+            <p class="col-md-1">                <label>State </label><select name="State" required id="id_State">
+  <option value="">---------</option>
+
+  <option value="CA" selected>California</option>
+
+  <option value="NY">New York</option>
+
+</select> </p>
+            <p class="col-md-1">                <label>City </label><select name="City" required id="id_City">
+  <option value="">---------</option>
+
+  <option value="CA" selected>California</option>
+
+  <option value="LA">Lassen</option>
+
+</select> </p>
+            <p class="col-md-2">                <label>Well </label><select name="Well" required id="id_Well">
+  <option value="">---------</option>
+
+  <option value="S3" selected>Sinclair 3</option>
+
+  <option value="KH">Kellog Hot Spring</option>
+
+</select> </p>
+            <p class="col-md-1">               <br/> <button type="submit" class="btn btn-default">Search</button></p>
+
+    </form>
+     </div>      
+	</div>
+	<div class="col-md-3">
+		<h2>Well Information</h2>
+	</div>
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-2">
+    <img src="/static/resources/stevo.png"/>
+
+		<h2>Social Media Information</h2>
+				<p>
+            <a class="twitter-timeline" href="https://twitter.com/energyhack" height="450">Tweets by @M&and;AGeothermal</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</p>
+        <h2>Document Repository</h2>
+				<p>
+               <img src="/static/resources/Doc%20repo%20image.png" height="150"/>
+		</p>
+	</div>
+	<div class="col-md-7">
+		<h2>Map</h2>
+        <iframe width="100%" height="900" src="/static/py/map.html" frameborder="0" ></iframe>
+</iframe>
+	</div>
+	<div class="col-md-3">
+        		<div class="form">               
+            <form action="/wellinfo/" method="POST" class="control-label">
+                <input type='hidden' name='csrfmiddlewaretoken' value='Mc9HB2Mjdyus36SSFHYTqmekP1iP4dgsLRx67vtwcRlQXoBZdkDea5G3AqHBO1IY' />
+                <table class="table"><tr><td>Number of Established Plants Nearby</td><td></td><td><input type="number" name="NumberOfEstablishedPlantsNearby" required id="id_NumberOfEstablishedPlantsNearby" /></td></tr>
+                <tr><td>Number of Developmental Plants Nearby</td><td></td><td><input type="number" name="NumberOfDevelopmentalPlantsNearby" required id="id_NumberOfDevelopmentalPlantsNearby" /></td></tr>
+                <tr><td>Operator Name</td><td></td><td><input type="text" name="OperatorName" maxlength="200" required id="id_OperatorName" /></td></tr>
+                <tr><td>Well Status</td><td></td><td><input type="text" name="WellStatus" maxlength="200" required id="id_WellStatus" /></td></tr>
+                <tr><td>Conversion Technology</td><td></td><td><input type="text" name="ConversionTechnology" maxlength="200" required id="id_ConversionTechnology" /></td></tr>
+                <tr><td>Cooling Type</td><td></td><td><input type="text" name="CoolingType" maxlength="200" required id="id_CoolingType" /></td></tr>
+                <tr><td>Age of Well (Years)</td><td></td><td><input type="number" name="AgeOfWellInYears" required id="id_AgeOfWellInYears" /></td></tr>
+                <tr><td>Depth of Well (m)</td><td></td><td><input type="number" name="WellDepthInMeters" required id="id_WellDepthInMeters" /></td></tr></table>
+
+
+            </form>
+            		<p>Search for Well Information   <a class="btn btn-default" href="http://www.google.co.uk"> <img src="/static/resources/google-logo-SMALL.png"/></a></p>
+
+        </div>
+
+		<h2>Geological Information</h2>
+				<p>
+            <div class="form">               
+            <form action="/geoinfo/" method="POST" class="control-label">
+                <input type='hidden' name='csrfmiddlewaretoken' value='Mc9HB2Mjdyus36SSFHYTqmekP1iP4dgsLRx67vtwcRlQXoBZdkDea5G3AqHBO1IY' />
+                <table class="table"><tr><td>Tempreature</td><td/><td/><td><input type="number" name="Tempreature" required id="id_Tempreature" /></td></tr>
+                <tr><td>Chemical Composition</td><td/><td/><td><input type="text" name="ChemicalComposition" maxlength="200" required id="id_ChemicalComposition" /></td></tr>
+                <tr><td>Rock Type</td><td/><td/><td><input type="text" name="RockType" maxlength="200" required id="id_RockType" /></td></tr></table>
+                            </form>
+                </div>
+		</p>
+        <h2>Risk Profile</h2>
+				<p>
+			<div class="form">               
+			<form action="/riskprofile/" method="POST" class="control-label">
+				<input type='hidden' name='csrfmiddlewaretoken' value='Mc9HB2Mjdyus36SSFHYTqmekP1iP4dgsLRx67vtwcRlQXoBZdkDea5G3AqHBO1IY' />
+				<table class="table">
+					<tr><td>
+            <img src="/static/resources/yes-grey.png"/>
+
+        </td><td>Notes: </td><td rowspan="4" colspan="2"><textarea name="Notes" cols="40" rows="10" required id="id_Notes">
+</textarea></td></tr>
+					<tr><td>
+            <img src="/static/resources/maybe-grey.png"/>
+
+        </td></tr>
+					<tr><td>
+            <img src="/static/resources/no-grey.png"/>
+
+        </td></tr>
+				   <tr><td>Risk Rating: </td><td colspan="2"><input type="number" name="Score" required id="id_Score" /></td></tr>
+				</table>
+			</form>
+		</div>
+		</p>
+	
+	</div>
+<div class="row">
+	    <div class="col-md-4">
+		    <h2>Existing Policies in Region  <img src="/static/resources/drop-down-round-button.png" /></h2>
+        </div>
+	    <div class="col-md-4">
+		    <h2>Existing Policies for Insured <img src="/static/resources/drop-down-round-button.png" /></h2>               
+
+	    </div>
+    	    <div class="col-md-4">
+		    <h2>Loss Data <img src="/static/resources/drop-down-round-button.png" /></h2>               
+
+	    </div>
+
+    </div>
+
+
+
+
+        <hr/>
+        <footer>
+            <p>&copy;  - <img src="/static/resources/logo-small.png" alt="MS Amlin"/> - M&A Hackathon Team</p>
+        </footer>
+    </div>
+
+    <script src="/static/app/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/app/scripts/bootstrap.js"></script>
+    <script src="/static/app/scripts/respond.js"></script>
+
+
+</body>
+</html>
